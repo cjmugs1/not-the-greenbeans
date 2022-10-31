@@ -1,0 +1,150 @@
+:root{
+--title-font: "Archivo Black";
+--sub-title-font: "Archivo";
+--p-font: "Judson";
+--font-color: #0c0c0c;
+--orange: #fdb913;
+--purple: #662d91;
+--green: #cbdb2a;
+}
+
+
+
+*{
+
+}
+
+
+
+a:link{
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+a:visited{
+    color: var(--font-color);
+}
+
+a:hover{
+    color: var(--orange);
+}
+
+
+
+
+body{
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    color: var(--font-color);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1.5rem 1.5rem 20px 1.5rem;
+}
+
+.header-content{
+    max-width: 700px;
+    flex: 1 1 600px;
+    height: auto;
+    margin: 0 20px 0 20px;
+}
+
+.header-content img{
+    width: 100%;
+    height: auto;
+    border-bottom: 20px solid var(--font-color);
+}
+
+.header-links{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+    font-family: var(--title-font);
+    font-size: 36pt;
+}
+
+.header-details{
+    height: 100%;
+    display: block;
+    justify-content:left;
+    font-family: var(--title-font);
+    font-size: 24pt;
+}
+
+.header-details h2{
+    padding-top: 20px;
+    font-family: var(--sub-title-font);
+    font-size: 12pt;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+
+
+main{
+    display: inline;
+}
+
+
+.about{
+    margin: 5rem 0px 5rem 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content{
+    display: flex;
+    width: 50%;
+}
+
+.about-content img{
+    margin-left: 20px;
+    max-width: 300px;
+    max-height: auto;
+    border-radius: 10px;
+    box-shadow: -20px 10px 8px var(--green);
+}
+
+.work{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(300px, auto);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+}
+
+.work .card{
+    position: relative;
+    text-align: center;
+}
+
+#card-1{
+    grid-column: 1/3;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h2{
+    position: absolute;
+    top: 100px;
+}
+
+
+
+
+
