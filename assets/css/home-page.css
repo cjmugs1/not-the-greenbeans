@@ -1,11 +1,19 @@
+
+/* || GENERAL STYLING */
+
 :root{
 --title-font: "Archivo Black";
 --sub-title-font: "Archivo";
 --p-font: "Judson";
 --font-color: #0c0c0c;
---orange: #fdb913;
---purple: #662d91;
---green: #cbdb2a;
+--color1: #fdb913;
+--color2: #662d91;
+--color3: #cbdb2a;
+--font-size-1:36pt;
+--font-size-2:24pt;
+--font-size-3:12pt;
+--font-size-4:8pt;
+
 }
 
 
@@ -16,24 +24,10 @@
 
 
 
-a:link{
-    color: var(--font-color);
-    text-decoration: none;
-}
-
-a:visited{
-    color: var(--font-color);
-}
-
-a:hover{
-    color: var(--orange);
-}
-
-
-
+/* || BODY */
 
 body{
-    box-sizing: border-box;
+    box-sizing: border-box;    
     background-color: #f8f8f8;
     color: var(--font-color);
     max-width: 1200px;
@@ -41,80 +35,80 @@ body{
     margin-right: auto;
 } 
 
-
+/* || HEADER */
 
 header{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 1.5rem 1.5rem 20px 1.5rem;
+    margin: 1.5rem 1.5rem 5rem 1.5rem;
 }
 
 .header-content{
     max-width: 700px;
     flex: 1 1 600px;
     height: auto;
-    margin: 0 20px 0 20px;
+    margin: 0 3rem 0 0;
 }
 
 .header-content img{
     width: 100%;
     height: auto;
-    border-bottom: 20px solid var(--font-color);
+    border-bottom: 1rem solid var(--font-color);
 }
 
 .header-links{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 1.5rem;
     width: 100%;
     font-family: var(--title-font);
-    font-size: 36pt;
+    font-size: var(--font-size-1);
 }
 
 .header-details{
-    height: 100%;
-    display: block;
+    display: inline-block;
     justify-content:left;
     font-family: var(--title-font);
-    font-size: 24pt;
+    font-size: var(--font-size-2);
 }
 
 .header-details h2{
-    padding-top: 20px;
+    padding-top: 1.5rem;
     font-family: var(--sub-title-font);
-    font-size: 12pt;
+    font-size: var(--font-size-3);
     font-weight: 500;
     line-height: 1.5;
 }
 
-
+/*  || MAIN CONTENT */
 
 main{
     display: inline;
 }
 
+main section{
+    margin: 5rem 3rem 5rem 3rem;
+}
+
+
+/* | MAIN CONTENT - SECTION: ABOUT */
 
 .about{
-    margin: 5rem 0px 5rem 0px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
-.about-content{
-    display: flex;
-    width: 50%;
-}
-
-.about-content img{
-    margin-left: 20px;
+.about img{
     max-width: 300px;
     max-height: auto;
-    border-radius: 10px;
-    box-shadow: -20px 10px 8px var(--green);
+    border-radius: 0.75rem;
 }
+
+
+/* | MAIN CONTENT - SECTION: WORK */
 
 .work{
     display: grid;
@@ -127,10 +121,12 @@ main{
 .work .card{
     position: relative;
     text-align: center;
-}
-
-#card-1{
-    grid-column: 1/3;
+    font-family: var(--title-font);
+    font-size: var(--font-size-1);
+    background: rgb(2,0,36);
+    background-color: var(--font-color);
+    overflow: hidden;
+    box-shadow: 0px 0px 15px #dfdfdf;
 }
 
 .card img{
@@ -139,12 +135,139 @@ main{
     object-fit: cover;
 }
 
-.card h2{
+
+
+.card-overlay {
     position: absolute;
-    top: 100px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: var(--color1);
+  }
+  
+.overlay-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--font-color);
+}
+
+#card-1{
+    grid-column: 1/3;
+    grid-row: 1/3;
 }
 
 
+/* | MAIN CONTENT - SECTION: CONTACT */
+
+form {
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+}
+   
+input, textarea {
+      border:0; outline:0;
+      padding: 1em;
+      border-radius(8px);
+      display: block;
+      width: 100%;
+      margin-top: 1em;
+      font-family: 'Merriweather', sans-serif;
+      box-shadow(0 1px 1px rgba(black, 0.1));
+      resize: none;
+}
+     
+/* &:focus {
+        @include box-shadow(0 0px 2px rgba($red, 1)!important);
+     } */
+
+   
+#input-submit {
+      color: white; 
+      background: red;
+      cursor: pointer;
+     
+     /* &:hover {
+        @include box-shadow(0 1px 1px 1px rgba(#aaa, 0.6)); 
+     } */
+}
+   
+   textarea {
+       height: 126px;
+   }
+ 
+ 
+ 
+ .half {
+   float: left;
+   width: 48%;
+   margin-bottom: 1em;
+ }
+ 
+ .right { width: 50%; }
+ 
+ .left {
+      margin-right: 2%; 
+ }
+ 
+ 
+ @media (max-width: 480px) {
+   .half {
+      width: 100%; 
+      float: none;
+      margin-bottom: 0; 
+   }
+ }
+ 
+ 
+ /* Clearfix */
+ .cf:before,
+ .cf:after {
+     content: " "; /* 1 */
+     display: table; /* 2 */
+ }
+ 
+ .cf:after {
+     clear: both;
+ }
+
+/* || FOOTER */
+
+.footer{
+    text-align: center;
+    font-family: "Judson";
+    color: var(--font-color);
+}
+
+/* || PSEUDO CLASSES */
+
+a:link{
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+a:visited{
+    color: var(--font-color);
+}
+
+a:hover{
+    color: var(--color1);
+}
+
+.card:hover .card-overlay{
+    opacity: 1;
+}
+
+.overlay-text:hover{
+    color: var(--color2);
+}
 
 
+/* || MEDIA CLASSES */
 
